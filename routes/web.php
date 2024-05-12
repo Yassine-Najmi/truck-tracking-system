@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\DriverController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +18,18 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('dashboard', function () {
-    return Inertia::render('Admin/Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('dashboard', function () {
+//     return Inertia::render('Admin/Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('dashboard', function () {
+        return Inertia::render('Admin/Dashboard');
+    })->name('dashboard');
+
+    // Driver routes :
+    Route::get('drivers', [DriverController::class, 'index'])->name('drivers.index');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
