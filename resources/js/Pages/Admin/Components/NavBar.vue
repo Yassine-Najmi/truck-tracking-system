@@ -68,7 +68,7 @@ import { Link } from "@inertiajs/vue3";
                 </Link>
                 <form action="#" method="GET" class="hidden md:block md:pl-2">
                     <label for="topbar-search" class="sr-only">Search</label>
-                    <div class="relative md:w-64 md:w-96">
+                    <div class="relative md:w-96">
                         <div
                             class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
                         >
@@ -139,7 +139,7 @@ import { Link } from "@inertiajs/vue3";
                 </button>
                 <!-- Dropdown menu -->
                 <div
-                    class="z-50 hidden max-w-sm my-4 overflow-hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow-lg dark:divide-gray-600 dark:bg-gray-700 rounded-xl"
+                    class="z-50 hidden max-w-sm my-4 overflow-hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow-lg dark:divide-gray-600 dark:bg-gray-700"
                     id="notification-dropdown"
                 >
                     <div
@@ -435,7 +435,7 @@ import { Link } from "@inertiajs/vue3";
                 </button>
                 <!-- Dropdown menu -->
                 <div
-                    class="z-50 hidden max-w-sm my-4 overflow-hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow-lg dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
+                    class="z-50 hidden max-w-sm my-4 overflow-hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow-lg dark:bg-gray-700 dark:divide-gray-600"
                     id="apps-dropdown"
                 >
                     <div
@@ -657,7 +657,7 @@ import { Link } from "@inertiajs/vue3";
                 </button>
                 <!-- Dropdown menu -->
                 <div
-                    class="z-50 hidden w-56 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
+                    class="z-50 hidden w-56 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
                     id="dropdown"
                 >
                     <div class="px-4 py-3">
@@ -774,6 +774,7 @@ import { Link } from "@inertiajs/vue3";
                             <Link
                                 :href="route('logout')"
                                 method="post"
+                                as="button"
                                 class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                                 >Sign out</Link
                             >

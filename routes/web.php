@@ -26,15 +26,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('Admin/Dashboard');
     })->name('dashboard');
-
-    // Driver routes :
-    Route::get('drivers', [DriverController::class, 'index'])->name('drivers.index');
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Driver routes :
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resource('/drivers', DriverController::class);
+    });
 });
 
 
