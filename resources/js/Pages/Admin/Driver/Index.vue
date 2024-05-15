@@ -2,6 +2,8 @@
 import AdminLayout from "../Components/AdminLayout.vue";
 import Table from "@/Components/Table.vue";
 import { Head } from "@inertiajs/vue3";
+import CreateDriver from "./CreateDriver.vue";
+import DefaultModal from "@/Components/DefaultModal.vue";
 
 defineProps({
     drivers: {
@@ -29,8 +31,9 @@ const colNames = [
     "CNI",
     "CNSS",
 ];
-
 const actions = ["show", "edit", "destroy"];
+
+const title = "driver";
 </script>
 
 <template>
@@ -38,10 +41,17 @@ const actions = ["show", "edit", "destroy"];
     <AdminLayout>
         <Table
             :items="drivers"
-            :title="'driver'"
+            :title="title"
             :columns="columns"
             :colNames="colNames"
             :actions="actions"
-        ></Table>
+        >
+        </Table>
+        <DefaultModal>
+            <template #title> {{ title }} </template>
+            <template #body>
+                <CreateDriver></CreateDriver>
+            </template>
+        </DefaultModal>
     </AdminLayout>
 </template>

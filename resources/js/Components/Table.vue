@@ -1,6 +1,7 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
 import Pagination from "@/Components/Pagination.vue";
+import { onMounted } from "vue";
 
 const props = defineProps({
     items: Object,
@@ -14,6 +15,10 @@ const title = props.title;
 const columns = props.columns;
 const colNames = props.colNames;
 const actions = props.actions;
+
+onMounted(() => {
+    document.getElementById("defaultModalButton").click();
+});
 </script>
 <template>
     <section class="p-3 bg-gray-50 dark:bg-gray-900 sm:p-5">
@@ -25,7 +30,7 @@ const actions = props.actions;
                 <div
                     class="flex flex-col items-center justify-between p-4 space-y-3 md:flex-row md:space-y-0 md:space-x-4"
                 >
-                    <div class="w-full md:w-1/2">
+                    <div class="w-full md:w-1/4">
                         <form class="flex items-center">
                             <label for="simple-search" class="sr-only"
                                 >Search</label
@@ -61,26 +66,18 @@ const actions = props.actions;
                     <div
                         class="flex flex-col items-stretch justify-end flex-shrink-0 w-full space-y-2 md:w-auto md:flex-row md:space-y-0 md:items-center md:space-x-3"
                     >
-                        <button
-                            type="button"
-                            class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
-                        >
-                            <svg
-                                class="h-3.5 w-3.5 mr-2"
-                                fill="currentColor"
-                                viewbox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
+                        <!-- Modal toggle -->
+                        <div class="flex justify-center m-5">
+                            <button
+                                id="defaultModalButton"
+                                data-modal-target="defaultModal"
+                                data-modal-toggle="defaultModal"
+                                class="block text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                                type="button"
                             >
-                                <path
-                                    clip-rule="evenodd"
-                                    fill-rule="evenodd"
-                                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
-                                />
-                            </svg>
-                            Add
-                            {{ title.charAt(0).toUpperCase() + title.slice(1) }}
-                        </button>
+                                Add {{ title }}
+                            </button>
+                        </div>
                         <div
                             class="flex items-center w-full space-x-3 md:w-auto"
                         >
