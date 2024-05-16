@@ -28,15 +28,15 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'full_name' => ['required', 'string', 'max:255'],
-        //     'code' => ['required', 'string', 'max:255', 'unique:drivers'],
-        //     'adresse' => ['string', 'max:255'],
-        //     'phone' => ['string', 'max:255'],
-        //     'numero_2' => ['string', 'max:255'],
-        //     'cni' => ['string', 'max:255'],
-        //     'cnss' => ['string', 'max:255'],
-        // ]);
+        $request->validate([
+            'full_name' => ['required', 'string', 'max:255'],
+            'code' => ['required', 'string', 'max:255', 'unique:chaufeurs'],
+            'adresse' => ['string', 'max:255'],
+            'phone' => ['string', 'max:255'],
+            'numero_2' => ['string', 'max:255'],
+            'cni' => ['string', 'max:255'],
+            'cnss' => ['string', 'max:255'],
+        ]);
         Driver::create([
             'full_name' => $request->full_name,
             'code' => $request->code,
