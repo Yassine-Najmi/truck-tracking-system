@@ -1,5 +1,6 @@
 <script setup>
 import { useForm } from "@inertiajs/vue3";
+import InputError from "@/Components/InputError.vue";
 const form = useForm({
     full_name: null,
     code: null,
@@ -25,6 +26,7 @@ const form = useForm({
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Driver name"
                 />
+                <InputError :message="form.errors.full_name" class="mt-2" />
             </div>
             <div>
                 <label
@@ -37,6 +39,7 @@ const form = useForm({
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Code"
                 />
+                <InputError :message="form.errors.code" class="mt-2" />
             </div>
             <div class="sm:col-span-2">
                 <label
@@ -49,6 +52,7 @@ const form = useForm({
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Address"
                 />
+                <InputError :message="form.errors.adresse" class="mt-2" />
             </div>
             <div>
                 <label
@@ -61,6 +65,7 @@ const form = useForm({
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Phone N°1"
                 />
+                <InputError :message="form.errors.phone" class="mt-2" />
             </div>
             <div>
                 <label
@@ -73,6 +78,7 @@ const form = useForm({
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Phone N°2"
                 />
+                <InputError :message="form.errors.numero_2" class="mt-2" />
             </div>
             <div>
                 <label
@@ -85,6 +91,7 @@ const form = useForm({
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="CNI"
                 />
+                <InputError :message="form.errors.cni" class="mt-2" />
             </div>
             <div>
                 <label
@@ -97,6 +104,7 @@ const form = useForm({
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="CNSS"
                 />
+                <InputError :message="form.errors.cnss" class="mt-2" />
             </div>
         </div>
         <button
