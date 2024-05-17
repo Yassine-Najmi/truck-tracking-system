@@ -46,7 +46,7 @@ class DriverController extends Controller
             'cni' => $request->cni,
             'cnss' => $request->cnss,
         ]);
-        return Inertia::location(route('admin.drivers.index'));
+        return Inertia::location(route('admin.driver.index'));
     }
 
     /**

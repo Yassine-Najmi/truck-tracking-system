@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
 
     // Driver routes :
     Route::prefix('admin')->name('admin.')->group(function () {
-        Route::resource('/drivers', DriverController::class);
+        Route::resource('/driver', DriverController::class);
     });
 });
 

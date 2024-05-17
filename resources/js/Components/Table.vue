@@ -323,7 +323,7 @@ onMounted(() => {
                                                 <Link
                                                     :href="
                                                         route(
-                                                            `admin.${title}s.${action}`,
+                                                            `admin.${title}.${action}`,
                                                             item.id
                                                         )
                                                     "
