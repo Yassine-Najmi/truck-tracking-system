@@ -13,7 +13,7 @@ const form = useForm({
 </script>
 
 <template>
-    <form @submit.prevent="form.post(route('admin.drivers.store'))">
+    <form @submit.prevent="form.post(route('admin.driver.store'))">
         <div class="grid gap-4 mb-4 sm:grid-cols-2">
             <div>
                 <label
