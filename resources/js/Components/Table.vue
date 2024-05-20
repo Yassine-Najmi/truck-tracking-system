@@ -354,8 +354,9 @@ const emitData = (item) => {
                                             <li>
                                                 <button
                                                     type="button"
-                                                    data-modal-target="readProductModal"
-                                                    data-modal-toggle="readProductModal"
+                                                    :id="`read${modalTitle}Modal${item.id}`"
+                                                    data-modal-target="`read${modalTitle}Modal${item.id}`"
+                                                    data-modal-toggle="`read${modalTitle}Modal${item.id}`"
                                                     class="flex items-center w-full px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white dark:text-gray-200"
                                                 >
                                                     <svg
@@ -380,8 +381,9 @@ const emitData = (item) => {
                                             <li>
                                                 <button
                                                     type="button"
-                                                    data-modal-target="deleteModal"
-                                                    data-modal-toggle="deleteModal"
+                                                    :id="`delete${modalTitle}Modal${item.id}`"
+                                                    data-modal-target="`delete${modalTitle}Modal${item.id}`"
+                                                    data-modal-toggle="`delete${modalTitle}Modal${item.id}`"
                                                     class="flex items-center w-full px-4 py-2 text-red-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-red-400"
                                                 >
                                                     <svg
