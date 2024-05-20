@@ -10,7 +10,7 @@ console.log(driver);
 <template>
     <div class="flex justify-between mb-4 rounded-t sm:mb-5">
         <div class="text-lg text-gray-900 md:text-xl dark:text-white">
-            <h3 class="font-semibold">{{ driver.full_name }}</h3>
+            <h3 class="font-semibold">Apple iMac 27”</h3>
             <p class="font-bold">$2999</p>
         </div>
         <div>
@@ -40,58 +40,21 @@ console.log(driver);
         <dt
             class="mb-2 font-semibold leading-none text-gray-900 dark:text-white"
         >
-            Full Name
+            Details
         </dt>
         <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">
-            {{ driver.full_name }}
+            Standard glass ,3.8GHz 8-core 10th-generation Intel Core i7
+            processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz DDR4 memory,
+            Radeon Pro 5500 XT with 8GB of GDDR6 memory, 256GB SSD storage,
+            Gigabit Ethernet, Magic Mouse 2, Magic Keyboard - US.
         </dd>
         <dt
             class="mb-2 font-semibold leading-none text-gray-900 dark:text-white"
         >
-            Code
+            Category
         </dt>
         <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">
-            {{ driver.code }}
-        </dd>
-        <dt
-            class="mb-2 font-semibold leading-none text-gray-900 dark:text-white"
-        >
-            Address
-        </dt>
-        <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">
-            {{ driver.adresse }}
-        </dd>
-        <dt
-            class="mb-2 font-semibold leading-none text-gray-900 dark:text-white"
-        >
-            Phone Number
-        </dt>
-        <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">
-            {{ driver.phone }}
-        </dd>
-        <dt
-            class="mb-2 font-semibold leading-none text-gray-900 dark:text-white"
-        >
-            Phone Number 2
-        </dt>
-        <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">
-            {{ driver.numero_2 }}
-        </dd>
-        <dt
-            class="mb-2 font-semibold leading-none text-gray-900 dark:text-white"
-        >
-            CNI
-        </dt>
-        <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">
-            {{ driver.cni }}
-        </dd>
-        <dt
-            class="mb-2 font-semibold leading-none text-gray-900 dark:text-white"
-        >
-            CNSS
-        </dt>
-        <dd class="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">
-            {{ driver.cnss }}
+            Electronics/PC
         </dd>
     </dl>
 </template>
