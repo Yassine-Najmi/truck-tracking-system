@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DriverController;
+use App\Http\Controllers\Admin\TruckController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,7 @@ Route::middleware('auth')->group(function () {
     // Driver routes :
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('/drivers', DriverController::class);
+        Route::resource('/trucks', TruckController::class);
     });
 });
 
