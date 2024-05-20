@@ -68,9 +68,28 @@ class DriverController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Driver $driver)
     {
-        //
+
+        $request->validate([
+            'full_name' => ['required', 'string', 'max:255'],
+            'code' => ['required', 'string', 'max:255', 'unique:chaufeurs,code,' . $driver->id],
+            'adresse' => ['string', 'max:255'],
+            'phone' => ['string', 'max:255'],
+            'numero_2' => ['string', 'max:255'],
+            'cni' => ['string', 'max:255'],
+            'cnss' => ['string', 'max:255'],
+        ]);
+        $driver->update([
+            'full_name' => $request->full_name,
+            'code' => $request->code,
+            'adresse' => $request->adresse,
+            'phone' => $request->phone,
+            'numero_2' => $request->numero_2,
+            'cni' => $request->cni,
+            'cnss' => $request->cnss,
+        ]);
+        return Inertia::location(route('admin.driver.index'));
     }
 
     /**

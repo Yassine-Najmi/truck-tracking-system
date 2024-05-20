@@ -3,8 +3,13 @@ import AdminLayout from "../Components/AdminLayout.vue";
 import Table from "@/Components/Table.vue";
 import { Head } from "@inertiajs/vue3";
 import CreateDriver from "./CreateDriver.vue";
+import UpdateDriver from "./UpdateDriver.vue";
+import ReadDriver from "./ReadDriver.vue";
 import DefaultModal from "@/Components/DefaultModal.vue";
-
+import UpdateModal from "@/Components/UpdateModal.vue";
+import ReadModal from "@/Components/ReadModal.vue";
+// import CrudLayout from "@/Components/CrudLayout.vue";
+import { ref } from "vue";
 defineProps({
     drivers: {
         type: Object,
@@ -34,17 +39,23 @@ const colNames = [
 const actions = ["show", "edit", "destroy"];
 
 const title = "driver";
+const selectedDriver = ref(null);
+const handleDriverData = (driver) => {
+    selectedDriver.value = driver;
+};
 </script>
 
 <template>
     <Head title="Drivers" />
     <AdminLayout>
+        <!-- <CrudLayout></CrudLayout> -->
         <Table
             :items="drivers"
             :title="title"
             :columns="columns"
             :colNames="colNames"
             :actions="actions"
+            @data="handleDriverData"
         >
         </Table>
         <DefaultModal>
@@ -53,5 +64,21 @@ const title = "driver";
                 <CreateDriver></CreateDriver>
             </template>
         </DefaultModal>
+        <UpdateModal :title="title">
+            <template #body>
+                <UpdateDriver
+                    :title="title"
+                    :driver="selectedDriver"
+                ></UpdateDriver>
+            </template>
+        </UpdateModal>
+        <ReadModal :title="title">
+            <template #body>
+                <ReadDriver
+                    :title="title"
+                    :driver="selectedDriver"
+                ></ReadDriver>
+            </template>
+        </ReadModal>
     </AdminLayout>
 </template>
